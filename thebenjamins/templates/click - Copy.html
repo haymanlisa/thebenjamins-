@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<title>Interest Predictor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/coffeehouse.jpg");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+<body>
+  <header>
+
+  </header>
+
+<!-- <form action="/action_page.php" target="_blank"> -->
+  <form method="POST" action="/send" role="form", name="intform">
+    <div class="form-group">
+      <label for="inputLoan"> Loan Amount </label>
+      <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputLoan" name="loanAmount" placeholder="Amount of Loan">
+    </div>
+    <div class="form-group">
+      <label for="inputFICO">FICO Score</label>
+      <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputFICO" name="FICOamount" placeholder="FICO Score">
+    </div>
+    <div class="form-group">
+      <label for="inputIncome">Gross Annual Income</label>
+      <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputIncome" name="incomeAmount" placeholder="Income">
+    </div>
+    <div class="form-group">
+        <label for="inputTerm">Term of Loan (36 or 60 Months) </label>
+        <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputTerm" name="termAmount" placeholder="Term of Loan">
+      </div>
+      <div class="form-group">
+          <label for="inputHome">Home Type</label>
+          <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputHome" name="housing" placeholder="Mortgage, Rent or Own">
+        </div>
+
+    <input type="submit" value="submit" class="btn w3-button w3-black">
+  </form>
+<!-- </form> -->
+
+ <div>
+   <p> {{predicted}}</p>
+ </div> 
+
+  </div>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<title>click page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+background-image: url('static/cat.png');
+min-height: 100%;
+background-position: center;
+background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-text-white">
+<div class="w3-display-middle w3-jumbo">
+  <p></p>
+</div>
+<div class="w3-display-topleft w3-container w3-xlarge">
+  <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">Try this</button></p>
+</div>
+
+</div>
+
+<!-- Menu Modal -->
+<div id="menu" class="w3-modal">
+<div class="w3-modal-content w3-animate-zoom">
+  <div class="w3-container w3-black w3-display-container">
+    <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+    <<header>
+
+    </header>
+
+  <!-- <form action="/action_page.php" target="_blank"> -->
+    <form method="POST" action="/send" role="form", name="intform">
+      <div class="form-group">
+        <label for="inputLoan"> Loan Amount </label>
+        <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputLoan" name="loanAmount" placeholder="Amount of Loan">
+      </div>
+      <div class="form-group">
+        <label for="inputFICO">FICO Score</label>
+        <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputFICO" name="FICOamount" placeholder="FICO Score">
+      </div>
+      <div class="form-group">
+        <label for="inputIncome">Gross Annual Income</label>
+        <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputIncome" name="incomeAmount" placeholder="Income">
+      </div>
+      <div class="form-group">
+          <label for="inputTerm">Term of Loan (36 or 60 Months) </label>
+          <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputTerm" name="termAmount" placeholder="Term of Loan">
+        </div>
+        <div class="form-group">
+            <label for="inputHome">Home Type</label>
+            <input type="text" class="w3-input w3-padding-16 w3-border form-control" id="inputHome" name="housing" placeholder="Mortgage, Rent or Own">
+          </div>
+
+      <input type="submit" value="submit" class="btn w3-button w3-black">
+    </form>
+  <!-- </form> -->
+
+   <div>
+     <p> {{predicted}}</p>
+   </div>
+
+    </div>
+
+  <script>
+  // Tabbed Menu
+  function openMenu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+  }
+  document.getElementById("myLink").click();
+  </script>
+
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</body>
+</html>
